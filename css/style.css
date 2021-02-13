@@ -20,6 +20,10 @@
 
 /*Global*/
 
+html {
+    height: 100%;
+}
+
 body {
     min-width: 960px;
     margin: 0;
@@ -30,6 +34,10 @@ body {
     font-weight: 400;
     color: var(--basic-black);
     background-color: var(--basic-white);
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    align-content: start;
 }
 
 a {
@@ -37,8 +45,10 @@ a {
     color: var(--basic-white);
 }
 
-li {
+ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 img {
@@ -52,6 +62,8 @@ h2 {
     font-weight: 400;
     line-height: 30px;
     text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 24px;;
 }
 
 .button {
@@ -62,12 +74,17 @@ h2 {
     text-transform: uppercase;
 }
 
-/*.container {
+.container {
     width: 940px;
     margin: 0 auto;
-}*/
+}
 
-
+.logo {
+    background-color: var(--basic-red);
+    display: block;
+    text-align: center;
+    box-sizing: border-box;
+}
 
 /*Header*/
 
@@ -77,19 +94,37 @@ h2 {
     background-color: var(--basic-grey);
     color: var(--basic-black);
     font-family: "Cuprum", Arial, sans-serif;
-}
-
-.order-nav {
-    background-color: var(--basic-extragrey);
-}
-
-.main-header {
     font-size: 18px;
     line-height: 24px;
 }
 
+.header-logo {
+    width: 220px;
+    height: 47px;
+    padding-top: 15px;
+}
+
+.order-nav-wrapper {
+    background-color: var(--basic-extragrey);
+}
+
+.order-nav {
+    display: flex;
+    grid-template-columns: min-content 1fr max-content;
+}
+
+.order-info {
+    margin-left: auto;
+}
+
 .make-order {
     background-color: var(--basic-green);
+}
+
+.header-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
 }
 
 .description {
@@ -97,6 +132,7 @@ h2 {
     font-style: italic;
     font-size: 16px;
     line-height: 23px;
+    margin-left: 30px;
 }
 
 .header-tel {
@@ -112,14 +148,21 @@ h2 {
     color: var(--basic-darkgrey);
 }
 
+.header-login {
+    justify-self: end;
+}
+
 .header-login a{
     font-size: 21px;
     line-height: 21px;
     color: var(--basic-black);
 }
 
-.site-nav {
+.site-nav-wrapper {
     background-color: var(--basic-darkgrey);
+}
+
+.site-nav {
 }
 
 
@@ -127,6 +170,17 @@ h2 {
 /*Main*/
 
 
+
+.pre-catalog {
+    margin-bottom: 59px;
+}
+
+.pre-catalog-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 123px);
+    gap: 20px;
+}
 
 .pre-catalog-list-item {
     font-family: "Cuprum", Arial, sans-serif;
@@ -163,15 +217,36 @@ h2 {
     background-color: var(--special-yellow);
 }
 
+.pre-catalog-list-item:last-child {
+    grid-row: 2 / 4;
+    grid-column: 1 / 3;
+    background-color: var(--basic-darkgrey);
+}
+
+.popular-products {
+    margin-bottom: 70px;
+}
+
 .popular-products h2,
 .popular-producers h2{
     background-color: var(--basic-greylight);
+    margin-bottom: 20px;
+}
+
+.popular-products-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .popular-products-list-item {
     font-size: 18px;
     line-height: 20px;
     font-weight: 700;
+    min-height: 318px;
+    width: 220px;
+    box-sizing: border-box;
+    border: 1px solid #EAEAEA;
 }
 
 .popular-products-list-item del,
@@ -180,12 +255,50 @@ h2 {
     line-height: 18px;
 }
 
-.services {
+.popular-producers {
+    margin-bottom: 70px;
+}
+
+.popular-producers-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.popular-producers-list-item {
+    width: 220px;
+    height: 145px;
+    box-sizing: border-box;
+    border: 1px solid #EAEAEA;
+    
+}
+
+.services-wrapper {
     background-color: var(--basic-grey);
+    padding-top: 64px;
+}
+
+.services {
+    margin-bottom: 70px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    column-gap: 20px;
+}
+
+.services-description {
+    grid-column: 1 / -1;
+    margin-bottom: 70px;
+}
+
+.services-description h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
 }
 
 .services-list {
     background-color: var(--basic-darkgrey);
+    box-sizing: border-box;
+    margin-right: 80px;
 }
 
 .services-list-item {
@@ -202,6 +315,13 @@ h2 {
     line-height: 30px;
     text-transform: uppercase;
     color: var(--basic-darkgrey);
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.index-columns {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 }
 
 .clients-list {
@@ -222,20 +342,34 @@ h2 {
     color: var(--basic-white);
 }
 
-.footer-top {
+.footer-top-wrapper {
     background-color: var(--basic-darkgrey);
+}
+
+.footer-top {
+    
     font-family: "Cuprum", Arial, sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
 }
 
+.footer-logo {
+    width: 220px;
+    height: 68px;
+    padding: 20px 41px 25px 41px;
+}
+
 .products-list a {
     color: var(--special-gold);
 }
 
-.footer-bottom {
+.footer-bottom-wrapper {
     background-color: var(--basic-extragrey);
+}
+
+.footer-bottom {
+    
     font-family: "Cuprum", Arial, sans-serif;
     font-weight: 400;
     font-size: 16px;
