@@ -116,6 +116,7 @@ img {
     text-align: center;
     color: var(--basic-white);
     border: none;
+    cursor: pointer;
 }
 
 .button:hover,
@@ -1269,6 +1270,8 @@ button.button-next {
     border: none;
     padding: 0;
     margin: 0;
+    font-size: 15px;
+    line-height: 19px;
 }
 
 fieldset.price-filter {
@@ -1289,6 +1292,7 @@ fieldset.producers-filter {
 
 .producers-filter li {
     height: 23px;
+    
 }
 
 .filter li {
@@ -1461,7 +1465,8 @@ fieldset.supply-filter {
 .product-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 18px;
     margin-top: 28px;
 }
 
@@ -1499,6 +1504,7 @@ fieldset.supply-filter {
 .pagination .current {
     background: var(--basic-red);
     color: var(--basic-white);
+    border: none;
 }
 
 .perforator-description-wrapper {
@@ -1509,7 +1515,7 @@ fieldset.supply-filter {
 .perforator-description {
     margin-top: 59px;
     padding-top: 64px;
-    padding-bottom: 68px;
+    padding-bottom: 58px;
     font-size: 13px;
     line-height: 24px;
     text-transform: none;
@@ -1803,10 +1809,8 @@ p.developer {
     grid-column: 1 / -1;
 }
 
-.feedback-submit-wrapper {
+.modal-wrapper {
     background-color: #F4F4F4;
-    height: 112px;
-    box-sizing: border-box;
     padding: 37px 0;
 }
 
@@ -1814,5 +1818,49 @@ p.developer {
     width: 943px;
     height: 449px;
     display: none;
+}
+
+.modal-cart {
+    width: 620px;
+    height: 282px;
+    background-color: var(--basic-white);
+    display: none;
+}
+
+.modal-cart h2 {
+    margin: 67px auto;
+    width: 420px;
+    text-align: center;
+    font-family: Cuprum, "Arial", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    position: relative;
+}
+
+.modal-cart h2::before {
+    content: "";
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    background: 0 0 no-repeat url("../img/icon-mark.svg");
+}
+
+.modal-cart .container {
+    width: 394px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.modal-cart .button {
+    width: 192px;
+}
+
+.button.button-white {
+    color: var(--basic-black);
+    background: var(--basic-white);
 }
 
